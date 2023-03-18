@@ -1,5 +1,5 @@
 <template>
     <div>
-        index page
+        my profile
     </div>
 </template>

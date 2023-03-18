@@ -1,5 +1,5 @@
 <template>
     <div>
-        index page
+        profile event
     </div>
 </template>
