@@ -12,8 +12,11 @@
     </div>
 </template>
 
-<script setup>
+<script setup >
 //import {useUtils} from '../composables/useUtils'
+definePageMeta({
+    middleware:"auth"
+})
 const {count,getCount,setCount} = useUtils();
 
 
