@@ -18,6 +18,6 @@ definePageMeta({
     middleware:"auth"
 })
 const {count,getCount,setCount} = useUtils();
-
-
+const res = await $fetch('/api/hello')
+console.log(res)
 </script>
