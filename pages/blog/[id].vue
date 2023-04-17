@@ -7,6 +7,15 @@
                 <button @click="change('prev')" class="bg-green-500 text-white px-4 py-2 rounded">Prev</button>
                 <button @click="change('next')" class="bg-green-500 text-white px-4 py-2 rounded">Next</button>
             </div>
+            <div>Posts</div>
+            <div class="border p-5 my-5 rounded bg-gray-200">
+                <h2 class="font-semibold text-sm">{{ rand1.title }}</h2>
+                <p class="font-semibold text-sm">{{rand1.body}}</p>
+            </div>
+            <div class="border p-5 my-5 rounded bg-gray-200">
+                <h2 class="font-semibold text-sm">{{ rand2.title }}</h2>
+                <p class="font-semibold text-sm">{{rand2.body}}</p>
+            </div>
         </div>
     </div>
 </template>
@@ -16,8 +25,13 @@ const route = useRoute();
 const router = useRouter();
 const api = useRuntimeConfig();
 
+const randVal = Math.floor(Math.random()*100+1)
+const randVal2 = Math.floor(Math.random()*100+1)
 
 let {data} = await useFetch(`${api.public.apiBase}/posts/${route.params.id}`)
+
+const { data:rand1 } = await useAsyncData('rand1', () => $fetch(`${api.public.apiBase}/posts/${randVal}`))
+const { data:rand2 } = await useAsyncData('rand2', () => $fetch(`${api.public.apiBase}/posts/${randVal2}`))
 
 const change = (p) =>{
     if(p=='prev' && route.params.id>0){
@@ -26,5 +40,7 @@ const change = (p) =>{
         router.push(`/blog/${parseInt(route.params.id) +1}`)
     }
 }
+
+
 
 </script>
