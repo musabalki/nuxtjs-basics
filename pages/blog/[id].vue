@@ -9,12 +9,12 @@
             </div>
             <div>Posts</div>
             <div class="border p-5 my-5 rounded bg-gray-200">
-                <h2 class="font-semibold text-sm">{{ rand1.title }}</h2>
-                <p class="font-semibold text-sm">{{rand1.body}}</p>
+                <h2 class="font-semibold text-sm">{{ rand1?.title }}</h2>
+                <p class="font-semibold text-sm">{{rand1?.body}}</p>
             </div>
             <div class="border p-5 my-5 rounded bg-gray-200">
-                <h2 class="font-semibold text-sm">{{ rand2.title }}</h2>
-                <p class="font-semibold text-sm">{{rand2.body}}</p>
+                <h2 class="font-semibold text-sm">{{ rand2?.title }}</h2>
+                <p class="font-semibold text-sm">{{rand2?.body}}</p>
             </div>
         </div>
     </div>
